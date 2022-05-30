@@ -1,0 +1,92 @@
+﻿@model EmployeeCoreProject.Models.EmpLogin
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link href="~/css/timeline.css" rel="stylesheet" />
+
+
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap-utilities.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/site.css" rel="stylesheet" />
+
+<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+
+
+<link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="~/css/metisMenu.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="~/css/startmin.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="~/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
+            <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EmployeeProject</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h1>Registration</h1>
+                        <form asp-action="Registration">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" type="email" class="form-control" required />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password" class="control-label"></label>
+                                <input asp-for="Password" type="password" class="form-control" required />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                            </div>
+
+                        </form>
+                        <div>
+                            <a asp-action="Index">Back to List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer @*class="border-top footer text-muted"*@>
+    <div class="container">
+        <div class="footer ">
+
+            &copy; 2022 - EmployeeCoreProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </div>
+</footer>
+<script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+
+<script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
