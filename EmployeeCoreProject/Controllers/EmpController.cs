@@ -29,21 +29,21 @@ namespace EmployeeCoreProject.Controllers
         [HttpPost]
         public IActionResult Login(EmpLogin objUser)
         {
-            var res = _db.LoginTable.Where(a => a.Email == objUser.Email).FirstOrDefault();
+            var res = _db.LoginTable.Where(a => a.Email == objUser.Email && a.Password==objUser.Password).FirstOrDefault();
 
             if (res == null)
             {
 
-                TempData["Invalid"] = "Email is not found";
+                TempData["Invalid"] = "Invalid crendiential";
+                return View("Login");
             }
-
             else
             {
-                if (res.Email == objUser.Email && objUser.Password == objUser.Password)
-                {
-
+                
                     var claims = new[] { /*new Claim(ClaimTypes.Name, res.Name),*/
-                                        new Claim(ClaimTypes.Email, res.Email) };
+                                        new Claim(ClaimTypes.Email, res.Email),
+                    
+                    };
 
                     var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -56,26 +56,12 @@ namespace EmployeeCoreProject.Controllers
                     new ClaimsPrincipal(identity),
                     authProperties);
 
-
                     //HttpContext.Session.SetString("Name", objUser.Email);
 
-                    return RedirectToAction("Table", "Home");
+                    return RedirectToAction("Table", "Home");              
 
-                }
-
-                else
-                {
-
-                    ViewBag.Inv = "Wrong Email Id or password";
-
-                    return View("Login");
-                }
-
-
-            }
-
-
-            return View("Login");
+                
+            }           
         }
 
         [HttpGet]

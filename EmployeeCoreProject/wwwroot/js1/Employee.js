@@ -1,5 +1,4 @@
 ﻿function getbyID(EmpID) {
-    
     $('#Name').css('border-color', 'lightgrey');
     $('#Email').css('border-color', 'lightgrey');
     $('#PhoneNo').css('border-color', 'lightgrey');
@@ -29,6 +28,7 @@
 
 
 function Update() {
+    ShowLoading();
     debugger;
     var emp = {
         Id: $('#Id').val(),
@@ -37,12 +37,13 @@ function Update() {
         PhoneNo: $('#PhoneNo').val(),
         Department: $('#Department').val(),
     };
+    ClosePopup();
     $.ajax({
         url: "/Home/Update",
         data: emp,
         type: "POST",
-        success: function (result) {           
-            ClosePopup();            
+        success: function (result) {
+            HideLoading();
             location.reload();
         },
         error: function (errormessage) {
@@ -64,3 +65,5 @@ function ClosePopup() {
     $('#myModal').modal('hide');
 }
 
+function ShowLoading() { $('.spanner').addClass('show'); }
+function HideLoading() { $('.spanner').removeClass('show'); }
