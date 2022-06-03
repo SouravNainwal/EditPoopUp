@@ -7507,11 +7507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dell\\Desktop\\EmployeeOfficeProject-master\\EmployeeCoreProject\\EmployeeCoreProject.csproj",
+      "projectUniqueName": "C:\\Users\\dell\\source\\repos\\EmployeeOfficeProject\\EmployeeCoreProject\\EmployeeCoreProject.csproj",
       "projectName": "EmployeeCoreProject",
-      "projectPath": "C:\\Users\\dell\\Desktop\\EmployeeOfficeProject-master\\EmployeeCoreProject\\EmployeeCoreProject.csproj",
+      "projectPath": "C:\\Users\\dell\\source\\repos\\EmployeeOfficeProject\\EmployeeCoreProject\\EmployeeCoreProject.csproj",
       "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dell\\Desktop\\EmployeeOfficeProject-master\\EmployeeCoreProject\\obj\\",
+      "outputPath": "C:\\Users\\dell\\source\\repos\\EmployeeOfficeProject\\EmployeeCoreProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",

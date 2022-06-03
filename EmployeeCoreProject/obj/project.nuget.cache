@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I0wu1l+TapyJnRgQ+d3fCpcPqNttiRqqjp2jNrUeqBA8ML6MVOPhMrGLkbmB7hHwinFdAA1stbbChiSDiQajOA==",
+  "dgSpecHash": "TZmRESu1OMuYmzfbCZlqR1PILsk13QM0FREtn8XPrEm+yNFRb+BiUEHT2Gv6I/c/Y5dfFdnKlH8hSUQgmtARTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dell\\Desktop\\EmployeeOfficeProject-master\\EmployeeCoreProject\\EmployeeCoreProject.csproj",
+  "projectFilePath": "C:\\Users\\dell\\source\\repos\\EmployeeOfficeProject\\EmployeeCoreProject\\EmployeeCoreProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dell\\.nuget\\packages\\bootstrap\\5.1.3\\bootstrap.5.1.3.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
