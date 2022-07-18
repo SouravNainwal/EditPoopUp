@@ -1,0 +1,84 @@
+// Add punctuations for float numbers
+$(document).on('keyup focusout', '.addPunctuation-float', function (evt) {
+    
+    let res = evt.key;
+    var type = evt.type;
+    let inputTarget = this;
+    let newVal = '';
+    let currentVal = Number(evt.currentTarget.value.replace(/[^0-9.-]+/g, ""));
+    if (type == 'keyup') {
+        if (!/\D/.test(res) || res == "." && !this.value.includes('.')) {
+            if (evt.currentTarget.value != "") {
+                var formatter = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                });
+                if ($(inputTarget).val().includes('.') || res == '.') {
+                    if ($(inputTarget).val().includes('.')) {
+                        if (currentVal > 2147483647) {
+                            newVal = formatter.format('2147483647').split('.').shift();
+                        }
+                        else {
+                            newVal = formatter.format(currentVal);
+                            if (newVal.split('').pop() == '0') {
+                                newVal = newVal.substring(0, newVal.length - 1);
+                            }
+                        }
+                    }
+                    else {
+                        if (currentVal > 2147483647) {
+                            newVal = formatter.format('2147483647').split('.').shift();
+                        }
+                        else {
+                            newVal = (formatter.format(currentVal).split('.').shift()) + res;
+                        }
+                    }
+                }
+                else {
+                    if (currentVal > 2147483647) {
+                        newVal = formatter.format('2147483647').split('.').shift();
+                    }
+                    else {
+                        newVal = (formatter.format(currentVal).split('.').shift());
+                    }
+                }
+                if ($(inputTarget).hasClass('isCost')) {
+                    $(inputTarget).val(newVal);
+                }
+                else {
+                    $(inputTarget).val(newVal.replace('$', ''));
+                }
+            }
+            return true;
+        }
+        else {
+            return false
+        }
+    }
+    else {
+        
+        let inputTarget = this;
+        let input_val = evt.currentTarget.value;
+
+        // check for decimal
+        if (input_val.indexOf(".") >= 0) {
+
+            input_val = input_val;
+            $(inputTarget).val(input_val);
+        }
+        else {
+            input_val = input_val;
+            $(inputTarget).val(input_val += ".00");
+        }
+
+    }
+
+});
+
+// Validation for float in punctuation
+$(document).on('keydown', '.addPunctuation-float', function (e) {
+    if ((e.keyCode >= 8 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || (e.keyCode == '.') || (e.keyCode == 109)) {
+        return true;
+    }
+        return false;
+});
